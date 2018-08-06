@@ -1,0 +1,81 @@
+* {
+	margin:0;
+	padding:0;
+}
+
+html {
+	box-sizing:border-box;
+}
+
+*, *:before, *:after {
+	box-sizing:inherit;
+}
+
+div {
+	width:350px;
+	margin:20px auto;
+}
+
+.cardDesign {
+	position:relative;
+	width:350px;
+	height:200px;
+	font-family:Courier,monospace;
+	text-transform:uppercase;
+	color:white;
+	background:linear-gradient(rgb(102,51,102), rgb(102,0,102));
+	border-radius:5px;
+}
+
+.ccIcon {
+	position:absolute;
+	top:15px;
+	right:15px;
+	font-size:35px;
+}
+
+.ccChip {
+	position:absolute;
+	top:35px;
+	left:35px;
+	width:50px;
+	height:35px;
+	background:linear-gradient(rgb(255,153,0), rgb(204,102,0));
+	border-radius:5px;
+}
+
+.ccNumber {
+	position:absolute;
+	top:100px;
+	left:35px;
+	font-size:25px;
+	font-weight:bold;
+}
+
+.ccName {
+	position:absolute;
+	top:150px;
+	left:35px;
+	font-size:20px;
+	font-weight:bold;
+}
+
+.ccExpDate {
+	position:absolute;
+	top:150px;
+	right:35px;
+	font-size:20px;
+	font-weight:bold;
+}
+
+.cardForm {
+	width:175px;
+	font-family:Helvetica,sans-serif;
+}
+
+.cardForm form input {
+	width:175px;
+	margin:5px;
+	padding:5px;
+	outline:0;
+}

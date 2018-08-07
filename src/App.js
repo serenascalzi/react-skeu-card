@@ -18,9 +18,10 @@ class App extends Component {
   	number:'',
     type:'',
     icon:'',
-    date:'',
     name:'',
-    cvv:''
+    date:'',
+    border:'none'
+    //cvv:''
   }
   
   componentDidMount(){
@@ -36,6 +37,9 @@ class App extends Component {
 
     if (!numberValidation.isPotentiallyValid) {
       console.log('Invalid Number')
+      this.setState({
+        border:'3px solid red'
+      })
     }
 
     else if (numberValidation.card) {
@@ -43,59 +47,51 @@ class App extends Component {
       if (numberValidation.card.type === 'jcb') {
         this.setState({
           type:'jcb',
-          icon:'fa fa-cc-jcb'
+          icon:'fa fa-cc-jcb',
+          border:'none'
         })
-        console.log(this.state.type)
-        console.log(this.state.icon)
       } else if (numberValidation.card.type === 'american-express') {
         this.setState({
           type:'american-express',
-          icon:'fa fa-cc-amex'
+          icon:'fa fa-cc-amex',
+          border:'none'
         })
-        console.log(this.state.type)
-        console.log(this.state.icon)
       } else if (numberValidation.card.type === 'diners-club') {
         this.setState({
           type:'diners-club',
-          icon:'fa fa-cc-diners-club'
+          icon:'fa fa-cc-diners-club',
+          border:'none'
         })
-        console.log(this.state.type)
-        console.log(this.state.icon)
       } else if (numberValidation.card.type === 'visa') {
         this.setState({
           type:'visa',
-          icon:'fa fa-cc-visa'
+          icon:'fa fa-cc-visa',
+          border:'none'
         })
-        console.log(this.state.type)
-        console.log(this.state.icon)
       } else if (numberValidation.card.type === 'maestro') {
         this.setState({
           type:'maestro',
-          icon:'maestro icon'
+          icon:'maestro icon',
+          border:'none'
         })
-        console.log(this.state.type)
-        console.log(this.state.icon)
       } else if (numberValidation.card.type === 'mastercard') {
         this.setState({
           type:'mastercard',
-          icon:'fa fa-cc-mastercard'
+          icon:'fa fa-cc-mastercard',
+          border:'none'
         })
-        console.log(this.state.type)
-        console.log(this.state.icon)
       } else if (numberValidation.card.type === 'discover') {
         this.setState({
           type:'discover',
-          icon:'fa fa-cc-discover'
+          icon:'fa fa-cc-discover',
+          border:'none'
         })
-        console.log(this.state.type)
-        console.log(this.state.icon)
       } else if (numberValidation.card.type === 'unionpay') {
         this.setState({
           type:'unionpay',
-          icon:'unionpay icon'
+          icon:'unionpay icon',
+          border:'none'
         })
-        console.log(this.state.type)
-        console.log(this.state.icon)
       }
     }
   }
@@ -115,6 +111,9 @@ class App extends Component {
 
     if (!dateValidation.isPotentiallyValid) {
       console.log('Invalid Date')
+      this.setState({
+        border:'3px solid red'
+      })
     }
 
     else {
@@ -146,7 +145,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <div className="cardDesign">
+        <div className="cardDesign" style={{border:this.state.border}}>
           <div className="ccChip"></div>
           <p className="ccNumber">{this.state.number}</p>
           <p className="ccIcon"><i className={`${this.state.icon}`}></i></p>
